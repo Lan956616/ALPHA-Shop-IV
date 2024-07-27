@@ -1,0 +1,18 @@
+.main {
+  width: 100%;
+  padding-top: 80px;
+
+  border: 1px solid purple;
+}
+   
+.mainContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 6fr 5fr;
+  grid-template-rows: auto;
+  grid-gap: 125px;
+  /*gap是這樣用嗎 頭好痛*/
+
+  border: 1px solid pink;
+}
