@@ -1,0 +1,109 @@
+.StepProgress {
+  width: 100%;
+
+  border: 2px solid blue;
+}
+
+.StepProgressTitle {
+  font-family: 'Noto Sans TC';
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 3rem;
+}
+
+.progress {
+  
+  height: 24px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.progressItem {
+  position: relative;
+  font-family: 'Noto Sans TC';
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 30px;
+  white-space: nowrap;
+}
+
+.progressItem + .progressItem {
+  margin-left: 124px;
+}
+
+.Item1, .Item2, .Item3{
+  position: relative;
+}
+
+.Item2,.Item3 {
+  color:#AFB1BD;
+}
+
+.Item1::before {
+  position: absolute;
+  top:0;
+  left:0;
+  content:'1';
+  font-size: 12px;
+  text-align: center;
+  line-height: 24px;
+  color: white;
+  height: 24px;
+  width: 24px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.Item2::before {
+  position: absolute;
+    top: 0;
+    left: 0;
+    content: '2';
+    font-size: 12px;
+    text-align: center;
+    line-height: 24px;
+    color: #AFB1BD;
+    border: 1px solid #AFB1BD;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.Item3::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '3';
+  font-size: 12px;
+  text-align: center;
+  line-height: 24px;
+  color: #AFB1BD;
+  border: 1px solid #AFB1BD;
+  height: 24px;
+  width: 24px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+
+.Item2::after, .Item3::after{
+
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 2px;
+  top:50%;
+  left: calc(-60px - 32px);
+  transform: translateY(-50%);
+  
+}
+
+.Item2::after {
+  background-color: black;
+}
+
+.Item3::after {
+  background-color: #F0F0F5;
+}
