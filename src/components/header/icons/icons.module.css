@@ -1,0 +1,17 @@
+.headerIcons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  border: 1px solid red;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.icon + .icon {
+  margin-left: 30px;
+}

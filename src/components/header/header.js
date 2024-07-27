@@ -1,4 +1,7 @@
 import Container from '../container'
+import Categories from './categories/categories'
+import Logo from './logo/logo'
+import Icons from './icons/icons'
 import styles from './header.module.css'
 
 export default function Header () {
@@ -8,7 +11,7 @@ export default function Header () {
         <div className={styles.headerWrapper}>
           <Categories/>
           <Logo/>
-          <Icons/>
+          <Icons/> 
         </div>
       </Container>
     </header>

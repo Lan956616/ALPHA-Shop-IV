@@ -1,0 +1,20 @@
+.categories {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  border: 1px solid red;
+}
+
+.listItem {
+  font-family: 'Noto Sans TC';
+  font-size: 16px;
+  font-weight: 500;
+  color: #2A2A2A;
+  
+}
+
+.listItem ~ .listItem {
+  margin-left: 2rem;
+}
