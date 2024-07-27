@@ -1,0 +1,61 @@
+.progresscontrol {
+  width: 100%;
+  border: 1px solid green;
+}
+
+.hr {
+  width: 100%;
+  height: 2px;
+  background-color: #E6E6EB;
+  margin-bottom: 1.5rem;
+} 
+
+.buttonArea {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 174px;
+  height: 46px;
+  border-radius: 8px;
+  background-color: #F67599;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContent {
+  font-size: 14px;
+  color: #FFFFFF;;
+}
+
+.buttonImg {
+  margin-left: 1rem;
+  width: 24px;
+  height: 24px;
+
+  border:1px solid red;
+}
+
+
+.stepBack {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid purple;
+}
+
+.stepBackArrow {
+  width: 24px;
+  height: 24px;
+}
+
+.stepBackContent {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 11px;
+}
