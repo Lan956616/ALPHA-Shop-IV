@@ -3,7 +3,7 @@
   margin-bottom: 3rem;
   height: 288px;
 
-  border: 3px solid purple;
+  
 }
 
 .step2Title {
@@ -11,5 +11,61 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
+  text-align: left;
+}
+
+.step2Shipping {
+  margin-top: 2rem;
+  width: 435px;
+  height: 60px;
+  border: 1px solid #F0F0F5;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.radioButton {
+  height: 20px;
+  width: 20px;
+  background-color: black;
+  margin-right: 20px;
+}
+
+.step2ShippingRightpart {
+
+  flex-grow: 1;
+}
+
+.RightpartMode {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: 'Inter';
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: right;
+}
+
+.shippingMode {
+  font-family: 'Noto Sans TC';
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
+
+
+
+
+
+.RightpartDescription {
+  font-family: 'Inter';
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
   text-align: left;
 }

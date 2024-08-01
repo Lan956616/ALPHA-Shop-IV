@@ -33,7 +33,6 @@ export default function Step3 () {
         <FormInput width='255px' title='有效期限' placeholder='MM/YY'/>
         <FormInput width='255px' title='CVC/CCV' placeholder='123'/>
       </Formrow>
-
     </div>
   )
 }
