@@ -1,7 +1,7 @@
 .StepProgress {
   width: 100%;
   margin-bottom: 4rem;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 
 .StepProgressTitle {

@@ -1,8 +1,8 @@
 .main {
   width: 100%;
   padding-top: 80px;
-
-  border: 1px solid purple;
+/* 
+  border: 1px solid purple; */
 }
    
 .mainContainer {
@@ -14,5 +14,5 @@
   grid-gap: 125px;
   /*gap是這樣用嗎 頭好痛*/
   align-items: center;
-  border: 1px solid pink;
+  /* border: 1px solid pink; */
 }

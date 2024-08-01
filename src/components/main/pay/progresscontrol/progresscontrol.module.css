@@ -1,6 +1,6 @@
 .progresscontrol {
   width: 100%;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .hr {
@@ -38,7 +38,7 @@
   width: 24px;
   height: 24px;
 
-  border:1px solid red;
+  /* border:1px solid red; */
 }
 
 
@@ -46,7 +46,7 @@
   display: flex;
   align-items: center;
 
-  border: 1px solid purple;
+  /* border: 1px solid purple; */
 }
 
 .stepBackArrow {
