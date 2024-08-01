@@ -9,7 +9,7 @@ export default function Pay() {
   return(
     <div className={styles.mainPay}>
       <StepProgress/>
-      <Step2/>
+      <Step1/>
       <ProgressControl/>
     </div>
   )
