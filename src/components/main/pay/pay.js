@@ -6,10 +6,18 @@ import Step3 from './step3/step3'
 import ProgressControl from './progresscontrol/progresscontrol'
 
 export default function Pay({step, setStep}) {
+  let element;
+  if (step === 1) {
+    element = <Step1/>
+  } else if (step === 2) {
+    element = <Step2/>
+  }else if (step === 3) {
+    element = <Step3/>
+  }
   return(
     <div className={styles.mainPay}>
       <StepProgress/>
-      <Step1/>
+      {element}
       <ProgressControl step={step} setStep={setStep}/>
     </div>
   )
