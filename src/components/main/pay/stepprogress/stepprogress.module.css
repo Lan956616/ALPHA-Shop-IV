@@ -87,14 +87,14 @@
 }
 
 
-.Item2::after, .Item3::after{
+.Item1::after, .Item2::after{
 
   content: '';
   position: absolute;
   width: 60px;
   height: 2px;
   top:50%;
-  left: calc(-60px - 32px);
+  left: 128px;
   transform: translateY(-50%);
   background-color: #F0F0F5;
 }
