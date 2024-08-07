@@ -69,7 +69,7 @@ function TotalRow ({title, content}) {
 export default function Cart({data}) {
 
   const [allData, setAllData] = useState(data)
-  //運用拿到的商品資料 data 先計算總total
+  //運用拿到的商品allData計算總total
   let totalPrice = 0;
   for (let i = 0; i < allData.length; i++) {
     totalPrice += parseInt(allData[i].price) * parseInt(allData[i].quantity)
