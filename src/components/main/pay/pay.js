@@ -16,7 +16,7 @@ export default function Pay({step, setStep}) {
   }
   return(
     <div className={styles.mainPay}>
-      <StepProgress/>
+      <StepProgress step={step}/>
       {element}
       <ProgressControl step={step} setStep={setStep}/>
     </div>

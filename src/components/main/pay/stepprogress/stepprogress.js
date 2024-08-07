@@ -1,6 +1,6 @@
 import styles from './stepprogress.module.css'
 
-export default function StepProgress () {
+export default function StepProgress ({step}) {
   return(
     <div className={styles.StepProgress}>
       <p className={styles.StepProgressTitle}>結帳</p>

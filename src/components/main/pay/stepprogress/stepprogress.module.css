@@ -26,6 +26,7 @@
   font-weight: 400;
   padding-left: 30px;
   white-space: nowrap;
+  color: #AFB1BD;
 }
 
 .progressItem + .progressItem {
@@ -36,23 +37,21 @@
   position: relative;
 }
 
-.Item2,.Item3 {
-  color:#AFB1BD;
-}
 
 .Item1::before {
   position: absolute;
-  top:0;
-  left:0;
-  content:'1';
-  font-size: 12px;
-  text-align: center;
-  line-height: 24px;
-  color: white;
-  height: 24px;
-  width: 24px;
-  background-color: black;
-  border-radius: 50%;
+    top: 0;
+    left: 0;
+    content: '1';
+    font-size: 12px;
+    text-align: center;
+    line-height: 24px;
+    color: #AFB1BD;
+    border: 1px solid #AFB1BD;
+    height: 24px;
+    width: 24px;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .Item2::before {
@@ -97,13 +96,5 @@
   top:50%;
   left: calc(-60px - 32px);
   transform: translateY(-50%);
-  
-}
-
-.Item2::after {
-  background-color: black;
-}
-
-.Item3::after {
   background-color: #F0F0F5;
 }
