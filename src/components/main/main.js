@@ -19,11 +19,11 @@ const data = [
   },
 ]
 
-export default function Main() {
+export default function Main({step, setStep}) {
   return(
     <div className={styles.main}>
       <div className={styles.mainContainer}>
-        <Pay/>
+        <Pay step={step} setStep={setStep}/>
         <Cart data={data}/>
       </div>
       
