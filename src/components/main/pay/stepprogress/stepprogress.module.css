@@ -37,6 +37,10 @@
   position: relative;
 }
 
+.Item1 {
+  color: #2A2A2A;
+}
+
 
 .Item1::before {
   position: absolute;
@@ -46,11 +50,11 @@
     font-size: 12px;
     text-align: center;
     line-height: 24px;
-    color: #AFB1BD;
-    border: 1px solid #AFB1BD;
+    color: white;
+    border: 1px solid #2A2A2A;
     height: 24px;
     width: 24px;
-    background-color: white;
+    background-color: #2A2A2A;
     border-radius: 50%;
 }
 
@@ -96,5 +100,40 @@
   top:50%;
   left: 128px;
   transform: translateY(-50%);
+}
+
+.Item1::after {
+  background-color: #2A2A2A;
+}
+.Item2::after {
   background-color: #F0F0F5;
 }
+
+.done {
+  color: #2A2A2A;
+}
+
+.done::before {
+  content: '✔︎';
+  color: white;
+  background-color: #2A2A2A;
+  border: 1px solid #2A2A2A;
+}
+
+.done::after {
+  background-color: #2A2A2A;
+}
+
+.highlight {
+  color: #2A2A2A;
+}
+
+.highlight::before {
+  color: #2A2A2A;
+  background-color: white;
+  border: 1px solid #2A2A2A
+}
+
+.highlight::after {
+  background-color: #2A2A2A;
+}  
