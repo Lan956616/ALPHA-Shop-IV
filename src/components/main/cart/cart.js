@@ -3,10 +3,10 @@ import minus from './minus.svg';
 import plus from './plus.svg';
 
 
-function CartProduct ({productNumber, productName, productPrice}){
+function CartProduct ({productNumber, productName, productPrice, IMG}){
   return(
     <div className={styles.CartProduct}> 
-     <img src={`/product-${productNumber}.jpg`} className={styles.CartProductImg}></img>
+     <img src={IMG} className={styles.CartProductImg}></img>
      <div className={styles.CartProductRightPart}>
        <div className={styles.rightPartTop}>
         <p className={styles.productName}>{productName}</p>
@@ -14,7 +14,7 @@ function CartProduct ({productNumber, productName, productPrice}){
        </div>
        <div className={styles.rightPartBottom}>
         <img src={minus} className={styles.countIcon}></img>
-        <p className={styles.productNumber}>1</p>
+        <p className={styles.productNumber}>{productNumber}</p>
         <img src={plus} className={styles.countIcon}></img>
 
        </div>
@@ -37,14 +37,20 @@ function TotalRow ({title, content}) {
 }
 
 
-export default function Cart() {
+
+export default function Cart({data}) {
+  //運用拿到的商品資料 data 先計算總total
+  let totalPrice= 0;
+  for (let i = 0; i < data.length; i++) {
+    totalPrice += parseInt(data[i].price)
+  }
   return(
     <div className={styles.mainCart}>
       <p className={styles.mainCartTitle}>購物籃</p>
-      <CartProduct productNumber='1' productName='破壞補丁牛仔褲' productPrice = '3,999'/>
-      <CartProduct productNumber='2' productName='刷色直筒牛仔褲' productPrice = '1,299'/>
+      {data.map((eachData) => <CartProduct key= {eachData.id} productNumber={eachData.quantity} productName={eachData.name} productPrice = {eachData.price} IMG={eachData.img}/>)
+      }
       <TotalRow title='運費' content= '免費'/>
-      <TotalRow title='小計' content= '$5,298'/>
+      <TotalRow title='小計' content= {totalPrice}/>
     </div>
   )
 }
