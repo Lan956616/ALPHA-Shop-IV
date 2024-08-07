@@ -5,7 +5,7 @@ import './App.css';
 import {useState} from 'react';
 
 function App() {
-  const [step, setStep] = useState('step1')
+  const [step, setStep] = useState(1)
   return (
     <div className='mainContainer'>
       <Header />
