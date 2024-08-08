@@ -3,6 +3,7 @@ import minus from './minus.svg';
 import plus from './plus.svg';
 import {useContext} from 'react'
 import { CartData } from '../../../CartContext';
+import { PayInfo } from '../../../payInfoContext';
 
 
 function CartProduct ({productNumber, productName, productPrice, IMG,ID}){
@@ -74,12 +75,7 @@ function TotalRow ({title, content}) {
 export default function Cart() {
 
   const allData = useContext(CartData).data
-
-  //運用拿到的商品allData計算總total
-  let totalPrice = 0;
-  for (let i = 0; i < allData.length; i++) {
-    totalPrice += parseInt(allData[i].price) * parseInt(allData[i].quantity)
-  }
+  const totalPrice = useContext(CartData).total
   return(
 
     <div className={styles.mainCart}>

@@ -4,15 +4,17 @@ import styles from './progresscontrol.module.css'
 import { useContext } from 'react';
 import {Step} from '../../../../stepContext';
 import { PayInfo } from '../../../../payInfoContext';
+import { CartData } from '../../../../CartContext'
 
 function Button({content, arrowsrc}) {
   const step = useContext(Step).step
   const setStep = useContext(Step).setStep
   const allInfo = useContext(PayInfo).payInfo
+  const total = useContext(CartData).total
 
   function handleNextClick() {
     if (step === 3) {
-      console.log('全部資訊在這', allInfo)
+      console.log('付款資訊：', allInfo,'總金額：', total)
     } else {
       setStep(step+1)
     }

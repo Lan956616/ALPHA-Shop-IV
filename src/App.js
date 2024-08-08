@@ -9,16 +9,19 @@ import { CartData } from './CartContext';
 
 function App() {
   const [step, setStep] = useState(1)
+  const [data, setData] = useState(useContext(CartData))  
+  let total = 0;
+  data.forEach((eachData)=> total+= (eachData.price * eachData.quantity))
   const [payInfo, setPayInfo] = useState(
-    {total:0,name:'',
+    {name:'',
     cardNumber:'',
     expiration: '',
     ccv: ''}
     )
-  const [data, setData] = useState(useContext(CartData))  
+  
 
   return (
-    <CartData.Provider value={{data:data, setData:setData}}>
+    <CartData.Provider value={{data:data, setData:setData, total:total}}>
     <PayInfo.Provider value={{payInfo:payInfo, setPayInfo: setPayInfo}}>
     <Step.Provider  value={{step:step, setStep:setStep}}>
       <div className='mainContainer'>
