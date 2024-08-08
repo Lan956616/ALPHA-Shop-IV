@@ -1,11 +1,14 @@
 import styles from './cart.module.css';
 import minus from './minus.svg';
 import plus from './plus.svg';
-import {useState, useContext} from 'react'
-import { CartData } from './CartContext';
+import {useContext} from 'react'
+import { CartData } from '../CartContext';
 
 
-function CartProduct ({productNumber, productName, productPrice, IMG,allData, setAllData, ID}){
+function CartProduct ({productNumber, productName, productPrice, IMG,ID}){
+
+  const allData = useContext(CartData).data
+  const setAllData = useContext(CartData).setData
 
   function handlePlusClicked(id) {
     setAllData(allData.map((data)=>{
@@ -71,7 +74,7 @@ function TotalRow ({title, content}) {
 export default function Cart() {
 
   const allData = useContext(CartData).data
-  const setAllData = useContext(CartData).setData
+
   //運用拿到的商品allData計算總total
   let totalPrice = 0;
   for (let i = 0; i < allData.length; i++) {
@@ -81,7 +84,7 @@ export default function Cart() {
 
     <div className={styles.mainCart}>
       <p className={styles.mainCartTitle}>購物籃</p>
-      {allData.map((eachData) => <CartProduct key= {eachData.id} productNumber={eachData.quantity} productName={eachData.name} productPrice = {eachData.price} IMG={eachData.img} allData={allData} setAllData={setAllData} ID={eachData.id}/>)
+      {allData.map((eachData) => <CartProduct key= {eachData.id} productNumber={eachData.quantity} productName={eachData.name} productPrice = {eachData.price} IMG={eachData.img}ID={eachData.id}/>)
       }
       <TotalRow title='運費' content= '免費'/>
       <TotalRow title='小計' content= {totalPrice}/>
