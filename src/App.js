@@ -2,10 +2,10 @@ import Header from './components/header/header'
 import Main from './components/main/main';
 import Footer from './components/footer/footer'
 import './App.css';
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {Step} from './stepContext';
 import {PayInfo} from './payInfoContext';
-
+import { CartData } from './CartContext';
 
 function App() {
   const [step, setStep] = useState(1)
@@ -15,8 +15,10 @@ function App() {
     expiration: '',
     ccv: ''}
     )
+  const [data, setData] = useState(useContext(CartData))  
 
   return (
+    <CartData.Provider value={{data:data, setData:setData}}>
     <PayInfo.Provider value={{payInfo:payInfo, setPayInfo: setPayInfo}}>
     <Step.Provider  value={{step:step, setStep:setStep}}>
       <div className='mainContainer'>
@@ -26,6 +28,7 @@ function App() {
       </div>
     </Step.Provider>
     </PayInfo.Provider>
+    </CartData.Provider>
   )
     
 }

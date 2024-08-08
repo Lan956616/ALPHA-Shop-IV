@@ -2,7 +2,7 @@ import styles from './cart.module.css';
 import minus from './minus.svg';
 import plus from './plus.svg';
 import {useContext} from 'react'
-import { CartData } from '../CartContext';
+import { CartData } from '../../../CartContext';
 
 
 function CartProduct ({productNumber, productName, productPrice, IMG,ID}){
