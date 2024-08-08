@@ -1,8 +1,13 @@
 import rightArrow from './rightarrow.svg'
 import leftArrow from './leftarrow.svg'
 import styles from './progresscontrol.module.css'
+import { useContext } from 'react';
+import {Step} from '../../../../stepContext';
 
-function Button({content, arrowsrc, setStep, step}) {
+function Button({content, arrowsrc}) {
+  const step = useContext(Step).step
+  const setStep = useContext(Step).setStep
+
   function handleNextClick() {
     if (step === 3) {
       return
@@ -18,7 +23,10 @@ function Button({content, arrowsrc, setStep, step}) {
   )
 }
 
-export default function ProgressControl({step, setStep}) {
+export default function ProgressControl() {
+
+  const step = useContext(Step).step
+  const setStep = useContext(Step).setStep
 
   function handlePrevious() {
     if(step === 1) {
@@ -36,7 +44,7 @@ export default function ProgressControl({step, setStep}) {
           <img src={leftArrow} className={styles.stepBackArrow}/>
           <p className={styles.stepBackContent}>上一步</p>
         </div>}
-        <Button content={step < 3? '下一步' : '確認下單'} arrowsrc={rightArrow} step={step}  setStep={setStep}/>
+        <Button content={step < 3? '下一步' : '確認下單'} arrowsrc={rightArrow} />
       </div>
 
     </div>

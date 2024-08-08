@@ -1,7 +1,8 @@
 import styles from './cart.module.css';
 import minus from './minus.svg';
 import plus from './plus.svg';
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import { CartData } from './CartContext';
 
 
 function CartProduct ({productNumber, productName, productPrice, IMG,allData, setAllData, ID}){
@@ -33,6 +34,7 @@ function CartProduct ({productNumber, productName, productPrice, IMG,allData, se
 
 
   return(
+
     <div className={styles.CartProduct}> 
      <img src={IMG} className={styles.CartProductImg}></img>
      <div className={styles.CartProductRightPart}>
@@ -66,15 +68,17 @@ function TotalRow ({title, content}) {
 
 
 
-export default function Cart({data}) {
+export default function Cart() {
 
-  const [allData, setAllData] = useState(data)
+  const allData = useContext(CartData).data
+  const setAllData = useContext(CartData).setData
   //運用拿到的商品allData計算總total
   let totalPrice = 0;
   for (let i = 0; i < allData.length; i++) {
     totalPrice += parseInt(allData[i].price) * parseInt(allData[i].quantity)
   }
   return(
+
     <div className={styles.mainCart}>
       <p className={styles.mainCartTitle}>購物籃</p>
       {allData.map((eachData) => <CartProduct key= {eachData.id} productNumber={eachData.quantity} productName={eachData.name} productPrice = {eachData.price} IMG={eachData.img} allData={allData} setAllData={setAllData} ID={eachData.id}/>)

@@ -2,16 +2,21 @@ import Header from './components/header/header'
 import Main from './components/main/main';
 import Footer from './components/footer/footer'
 import './App.css';
-import {useState} from 'react';
+import {useContext, useState, createContext} from 'react';
+import {Step} from './stepContext'
+
 
 function App() {
   const [step, setStep] = useState(1)
+
   return (
-    <div className='mainContainer'>
-      <Header />
-      <Main step={step} setStep={setStep}/>
-      <Footer />
-    </div>
+    <Step.Provider  value={{step:step, setStep:setStep}}>
+      <div className='mainContainer'>
+        <Header />
+        <Main/>
+        <Footer />
+      </div>
+    </Step.Provider>
   )
     
 }

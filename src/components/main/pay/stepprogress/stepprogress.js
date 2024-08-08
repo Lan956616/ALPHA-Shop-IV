@@ -1,6 +1,9 @@
 import styles from './stepprogress.module.css'
+import { Step } from '../../../../stepContext'
+import { useContext } from 'react'
 
-export default function StepProgress ({step}) {
+export default function StepProgress () {
+  const step = useContext(Step).step
   return(
     <div className={styles.StepProgress}>
       <p className={styles.StepProgressTitle}>結帳</p>
