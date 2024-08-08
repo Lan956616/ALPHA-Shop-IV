@@ -3,14 +3,16 @@ import leftArrow from './leftarrow.svg'
 import styles from './progresscontrol.module.css'
 import { useContext } from 'react';
 import {Step} from '../../../../stepContext';
+import { PayInfo } from '../../../../payInfoContext';
 
 function Button({content, arrowsrc}) {
   const step = useContext(Step).step
   const setStep = useContext(Step).setStep
+  const allInfo = useContext(PayInfo).payInfo
 
   function handleNextClick() {
     if (step === 3) {
-      return
+      console.log('全部資訊在這', allInfo)
     } else {
       setStep(step+1)
     }
@@ -18,7 +20,7 @@ function Button({content, arrowsrc}) {
   return(
     <div className={styles.button} onClick={handleNextClick}>
       <p className={styles.buttonContent}>{content}</p>
-      <img src={arrowsrc} className={styles.buttonImg}/>
+      {step===3? '' : <img src={arrowsrc} className={styles.buttonImg}/>}
     </div>
   )
 }
@@ -44,7 +46,8 @@ export default function ProgressControl() {
           <img src={leftArrow} className={styles.stepBackArrow}/>
           <p className={styles.stepBackContent}>上一步</p>
         </div>}
-        <Button content={step < 3? '下一步' : '確認下單'} arrowsrc={rightArrow} />
+        <Button content={step < 3? '下一步' : '確認下單'} 
+        arrowsrc={rightArrow} />
       </div>
 
     </div>
